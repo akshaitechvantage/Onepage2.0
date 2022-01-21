@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Techvantage</title>
+    <meta name="author" content="themexriver" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.css" />
+    <link rel="stylesheet" href="assets/css/flaticon-5.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animation.css" />
+    <link rel="stylesheet" href="assets/css/it-source-2.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
+    <link rel="stylesheet" href="assets/css/portfolio.css" />
+    <link rel="stylesheet" href="assets/css/case-detail.css" />
+  </head>
+  <!-- <head></head> -->
+  <body>
+    <div id="preloader"></div>
+    <div class="up">
+      <a href="#" class="scrollup text-center"
+        ><i class="fas fa-chevron-up"></i
+      ></a>
+    </div>
+    <div class="back" onclick="history.back()">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="">
+      <section class="background">
+        <div class="content-wrapper">
+          <div
+            class="inner-content d-flex align-items-start justify-content-center flex-column"
+          >
+            <h1 class="display-4">
+              Successfully reduced operational costs by 18% for a leading
+              Telecom Company
+            </h1>
+            <p class="content-subtitle">Telecom | Data Science</p>
+          </div>
+        </div>
+      </section>
+      <section class="background">
+        <div class="content-wrapper">
+          <div class="inner-content d-flex align-items-center">
+            <div class="col-12 col-md-8">
+              <p class="content-title">Problem Statement</p>
+
+              <p class="content-subtitle">
+                A leading Telecom company was struggling to cut down the
+                Time-to-repair for failures in the system. In the process of
+                repair, a huge amount of cost was involved too.
+              </p>
+
+              <p class="content-subtitle">
+                A need to build a prevention model which could potentially
+                identify the failures in advance and help curb the issue
+                beforehand which could also reduce the operational costs to some
+                percentage.
+              </p>
+
+              <p class="content-subtitle">
+                Data received from billions of data points from multiple vendors
+                were aggregating and it needed a real time analytics framework
+                to cut down operations costs involved in dealing with such
+                aggregated data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="background">
+        <div class="content-wrapper">
+          <div class="inner-content d-flex align-items-center">
+            <div class="col-12 col-md-8">
+              <div class="inner-content">
+                <p class="content-title">Outcome</p>
+
+                <p>
+                  Building of big Data Analytics framework using the Apache
+                  Stack
+                </p>
+                <p>
+                  A proprietary analytics framework built on Python for
+                  prediction using Machine Learning.
+                </p>
+                <ul>
+                  <li>Usage of Kafka for stream processing</li>
+                  <li>Hadoop HDFS for storage</li>
+                  <li>
+                    Map/reduce jobs, Apache spark, Python for Machine learning
+                  </li>
+                  <li>Tableau for visualization</li>
+                </ul>
+                <p>
+                  The model built using at the end was to identify patterns from
+                  equipment data and characterize the failure symptoms therein
+                  based on past experiences data.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="background">
+        <div class="content-wrapper">
+          <div class="inner-content d-flex align-items-center">
+            <div class="col-12 col-md-8">
+              <div class="inner-content">
+                <p class="content-title">Solution</p>
+
+                <p>
+                  The failure prevention model built by Techvantage, was able to
+                  predict potential failures in advance with an accuracy of 76%
+                  and the company was able to achieve as high as 18% operational
+                  efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+    <script src="assets/js/it-source-2.js"></script>
+    <script src="assets/js/innerpage.js"></script>
+    <script>
+      $(".mega-menu-link").click(function () {
+        console.log("clicked");
+        $("input[type=checkbox]").trigger("click"); //or you can use .click()
+
+        $("#menuu").removeClass("menu-active");
+      });
+
+      $("#menu-icon").click(function () {
+        console.log("clicked");
+        $("input[type=checkbox]").trigger("click"); //or you can use .click()
+      });
+      var ticking = false;
+      var isFirefox = /Firefox/i.test(navigator.userAgent);
+      var isIe =
+        /MSIE/i.test(navigator.userAgent) ||
+        /Trident.*rv\:11\./i.test(navigator.userAgent);
+      var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
+      var slideDurationSetting = 600; //Amount of time for which slide is "locked"
+      var currentSlideNumber = 0;
+      var totalSlideNumber = $(".background").length;
+
+      // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
+      function parallaxScroll(evt) {
+        if (isFirefox) {
+          //Set delta for Firefox
+          delta = evt.detail * -120;
+        } else if (isIe) {
+          //Set delta for IE
+          delta = -evt.deltaY;
+        } else {
+          //Set delta for all other browsers
+          delta = evt.wheelDelta;
+        }
+
+        if (ticking != true) {
+          if (delta <= -scrollSensitivitySetting) {
+            //Down scroll
+            ticking = true;
+            if (currentSlideNumber !== totalSlideNumber - 1) {
+              currentSlideNumber++;
+              nextItem();
+            }
+            slideDurationTimeout(slideDurationSetting);
+          }
+          if (delta >= scrollSensitivitySetting) {
+            //Up scroll
+            ticking = true;
+            if (currentSlideNumber !== 0) {
+              currentSlideNumber--;
+            }
+            previousItem();
+            slideDurationTimeout(slideDurationSetting);
+          }
+        }
+      }
+
+      // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
+      function slideDurationTimeout(slideDuration) {
+        setTimeout(function () {
+          ticking = false;
+        }, slideDuration);
+      }
+
+      // ------------- ADD EVENT LISTENER ------------- //
+      var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+      window.addEventListener(
+        mousewheelEvent,
+        _.throttle(parallaxScroll, 60),
+        false
+      );
+
+      // ------------- SLIDE MOTION ------------- //
+      function nextItem() {
+        var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+        $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+      }
+
+      function previousItem() {
+        var $currentSlide = $(".background").eq(currentSlideNumber);
+        $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+      }
+    </script>
+  </body>
+</html>
